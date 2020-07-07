@@ -27,8 +27,8 @@ class Convertor extends StatelessWidget {
         child: CupertinoPicker(
             itemExtent: 30,
             onSelectedItemChanged: (index) {
-              selMap = convProv.getSelectedMap();
-              convProv.setFromUnit(selMap.keys.toList()[index]);
+
+              convProv.setFromUnit(unitConvCurrencyVal.keys.toList()[index]);
             },
             backgroundColor: Colors.transparent,
             children: selMap.keys.map((f) => Text(f)).toList()),
@@ -59,11 +59,11 @@ class Convertor2 extends StatelessWidget {
         child: CupertinoPicker(
             itemExtent: 30,
             onSelectedItemChanged: (index) {
-              selMap = convProv.getSelectedMap();
-              convProv.setToUnit(selMap.keys.toList()[index]);
+
+              convProv.setToUnit(unitConvCurrencyVal.keys.toList()[index]);
             },
             backgroundColor: Colors.transparent,
-            children: selMap.keys.map((f) => Text(f)).toList()),
+            children: unitConvCurrencyVal.keys.map((f) => Text(f)).toList()),
       ),
     );
   }

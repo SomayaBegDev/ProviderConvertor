@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'Constant.dart';
-import 'ConvUI.dart';
+
 
 class ConvertorProvidor extends ChangeNotifier {
   String fromUnit = "NIS", toUnit = "NIS";
@@ -9,14 +9,14 @@ class ConvertorProvidor extends ChangeNotifier {
   String result = "0";
   int selectedIndex = 0;
 
-  getSelectedMap() {
+ /* getSelectedMap() {
     return unitsNav[selectedIndex];
   }
 
   setSelectedIndex(int i) {
     this.selectedIndex = i;
     notifyListeners();
-  }
+  }*/
 
   setFromUnit(String value) {
     this.fromUnit = value;
@@ -35,7 +35,7 @@ class ConvertorProvidor extends ChangeNotifier {
 
   calculate() {
     this.result =
-        "${getSelectedMap()[fromUnit] / getSelectedMap()[toUnit] * textFieldValue}";
+        "${unitConvCurrencyVal[fromUnit] / unitConvCurrencyVal[toUnit] * textFieldValue}";
     notifyListeners();
   }
 
