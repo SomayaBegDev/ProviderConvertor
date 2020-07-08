@@ -3,8 +3,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'Constant.dart';
-
 class Convertor extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -26,10 +24,12 @@ class Convertor extends StatelessWidget {
         child: CupertinoPicker(
             itemExtent: 30,
             onSelectedItemChanged: (index) {
-              convProv.setFromUnit(unitConvCurrencyVal.keys.toList()[index]);
+              convProv
+                  .setFromUnit(convProv.getSelectedMap().keys.toList()[index]);
             },
             backgroundColor: Colors.transparent,
-            children: unitConvCurrencyVal.keys.map((f) => Text(f)).toList()),
+            children:
+                convProv.getSelectedMap().keys.map((f) => Text(f)).toList()),
       ),
     );
   }
@@ -57,10 +57,12 @@ class Convertor2 extends StatelessWidget {
         child: CupertinoPicker(
             itemExtent: 30,
             onSelectedItemChanged: (index) {
-              convProv.setToUnit(unitConvCurrencyVal.keys.toList()[index]);
+              convProv
+                  .setToUnit(convProv.getSelectedMap().keys.toList()[index]);
             },
             backgroundColor: Colors.transparent,
-            children: unitConvCurrencyVal.keys.map((f) => Text(f)).toList()),
+            children:
+                convProv.getSelectedMap().keys.map((f) => Text(f)).toList()),
       ),
     );
   }
