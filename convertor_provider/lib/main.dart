@@ -13,15 +13,9 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MyScreen extends StatefulWidget {
-  @override
-  _MyScreenState createState() => _MyScreenState();
-}
-
-class _MyScreenState extends State<MyScreen> {
+class MyScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    ConvertorProvidor convProv = Provider.of<ConvertorProvidor>(context);
     return ChangeNotifierProvider<ConvertorProvidor>(
       create: (context) => ConvertorProvidor(),
       child: MaterialApp(

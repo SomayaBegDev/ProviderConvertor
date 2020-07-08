@@ -6,7 +6,6 @@ import 'package:provider/provider.dart';
 import 'Constant.dart';
 
 class Convertor extends StatelessWidget {
-  Map selMap;
   @override
   Widget build(BuildContext context) {
     ConvertorProvidor convProv = Provider.of<ConvertorProvidor>(context);
@@ -27,11 +26,10 @@ class Convertor extends StatelessWidget {
         child: CupertinoPicker(
             itemExtent: 30,
             onSelectedItemChanged: (index) {
-
               convProv.setFromUnit(unitConvCurrencyVal.keys.toList()[index]);
             },
             backgroundColor: Colors.transparent,
-            children: selMap.keys.map((f) => Text(f)).toList()),
+            children: unitConvCurrencyVal.keys.map((f) => Text(f)).toList()),
       ),
     );
   }
@@ -59,7 +57,6 @@ class Convertor2 extends StatelessWidget {
         child: CupertinoPicker(
             itemExtent: 30,
             onSelectedItemChanged: (index) {
-
               convProv.setToUnit(unitConvCurrencyVal.keys.toList()[index]);
             },
             backgroundColor: Colors.transparent,
